@@ -1,35 +1,20 @@
 <template>
-  <div>
-    <div
-    class="bg-gray-600 w-screen h-auto grid place-items-center gap-4 py-4"
-    >
-      <button v-if="!user" class="bg-primarycd w-4/6 h-11 rounded"
-      @click="handleLogin"
-      >Login</button>
-      <button v-if="!user" class="bg-primarycd w-4/6 h-11 rounded">Signup</button>
-      <button
-      v-else
-      class="bg-primarycd w-4/6 h-11 rounded"
-      @click="handleLogout"
-      >Logout</button>
+  <div class="gap-4 h-auto border-r-[1px] border-primarycd">
+    <div class="grid gap-12">
+      <button class="w-48" @click="navigateTo('/')">
+        <img src="@/assets/logo.png" alt="campus dash logo">
+      </button>
+
       <Search />
+      <Login />
+      <hr class="solid text-white w-5/6">
+      <Categories />
+
     </div>
+
   </div>
 </template>
 
 <script setup>
-const user = useSupabaseUser()
-const supabase = useSupabaseClient()
 
-const handleLogin = async () => {
-  const { error } = await supabase.auth.signInWithOAuth({
-  provider: 'google',
-  })
-  
-  if (error) console.log(error)
-}
-
-const handleLogout = async () => {
-  await supabase.auth.signOut()
-}
 </script>

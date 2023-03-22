@@ -10,21 +10,26 @@
     </button>
     <img
     v-if="user"
-    class="rounded"
+    class="rounded-full w-16"
     :src="`${user.user_metadata['picture']}`">
 
     <div class="grid place-items-center">
       <p
       v-if="user"
-      class="text-xl m-2"
+      class="text-md mb-2 text-primarycd"
       >
       Hey, {{ user.user_metadata['name'] }}
       </p>
-
+      <p
+      v-if="user"
+      class="text-md text-primarycd"
+      >
+      @username
+      </p>  
       <button
       v-if="user"
       @click="handleLogout"
-      class="text-lg text-slate-800 w-24 h-8 rounded border-slate-800 border-2"
+      class="text-md text-primarycd px-2 rounded border-redcd border-2"
       >
       logout
       </button>
@@ -47,5 +52,4 @@
   const handleLogout = async () => {
     await supabase.auth.signOut()
   }
-  
 </script>

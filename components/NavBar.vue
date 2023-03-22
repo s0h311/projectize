@@ -2,21 +2,21 @@
   <div class="w-auto h-auto">
     <div
     v-if="isDesktop"
-    class="grid grid-cols-3 gap-8 pt-12 items-center mb-10c">
+    class="grid grid-cols-3 gap-8 items-center mb-10">
       <button
-      class="w-56 ml-24 text-3xl font-mono font-semibold border-4 rounded p-3 border-slate-800"
+      class="w-60"
       @click="navigateTo('/')">
-        Campus|Dash
+        <img src="@/assets/logo.png" alt="campus dash logo">
       </button>
       <Search />
       <div class="absolute right-24">
         <Login />
       </div>
     </div>
+    <!---mobile--->
     <div
     v-else
-    class="grid grid-cols-2 items-center mt-2"
-    >
+    class="grid grid-cols-2 items-center mt-2">
       <button
       class="ml-6 text-redcd border-2 px-4 py-2 border-primarycd w-[70px] rounded">
         <img src="@/assets/logo1-righteous.png">
@@ -31,16 +31,16 @@
         </button>
       </div>
     </div>
-    <SideMenu
+    <MobileSideMenu
     class="mt-2"
     v-if="sideMenuEnabled"
     @side-menu-change="onSideMenuChange"/>
-
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
   const isDesktop = useMediaQuery('(min-width: 1024px)')
+
   const sideMenuEnabled = ref(false)
 
   const onSideMenuChange = () => {
