@@ -1,16 +1,13 @@
 <template>
-  <div class="mt-8 sm:mx-40"> <!--mx-auto mt-4 max-w-full space-y-4 px-8 xs:px-8 sm:px-10 lg:px-16 pb-16 w-[97%]-->
+  <div class="mt-4 md:mt-8 mx-6 md:mx-20"> <!--mx-auto mt-4 max-w-full space-y-4 px-8 xs:px-8 sm:px-10 lg:px-16 pb-16 w-[97%]-->
     <!--<NavBar />-->
-    <div class="grid grid-cols-[1fr,3fr] gap-28"> 
-      <SideMenu v-if="isDesktop" />
+    <div class="grid grid-cols-1 gap-10 md:grid md:grid-cols-[1fr,3fr] md:gap-20">
+      <Navigation />
       <slot />
     </div>
   </div>
 </template>
 
 <script setup>
-const isDesktop = computed(() => {
-  return useMediaQuery('(min-width: 1024px)')
-})
 
 </script>

@@ -9,9 +9,10 @@
       <Login />
       <hr class="solid text-white w-5/6">
       <Categories />
-
+      <NuxtLink
+      class="w-5/6 text-primarycd text-md"
+      to="/create">Create a Project</NuxtLink>
     </div>
-
   </div>
 </template>
 
