@@ -6,7 +6,7 @@
     @click="handleLogin"
     class="h-auto w-56"
     >
-    <img src="@/assets/login/btn_google_signin_dark_normal_web@2x.png">
+    <img src="@/assets/login/google.png">
     </button>
     <img
     v-if="user"
