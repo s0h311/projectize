@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 items-center m-4 relative">
+  <div class="grid grid-cols-2 items-center mx-8 relative">
     <button class="w-[1/2]">
       <img src="@/assets/logo.png">
     </button>
@@ -10,7 +10,7 @@
       </button>
     </div>
   </div>
-  <MobileSideMenu class="mt-2" v-if="sideMenuEnabled" @side-menu-change="onSideMenuChange" />
+  <MobileMenu v-if="sideMenuEnabled" @side-menu-change="onSideMenuChange" />
 </template>
 
 <script setup lang="ts">
