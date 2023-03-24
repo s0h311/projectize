@@ -16,21 +16,21 @@
 
         <button
         class="w-8"
-        @click="handleLogin('google')"
+        @click="handleLogin"
         ><img src="@/assets/login/google.png" alt="login with google"></button>
 
         <button
-        @click="handleLogin('gitlab')"
+        @click="handleLogin"
         class="w-8"
         ><img src="@/assets/login/gitlab.svg" alt="login with gitlab"></button>
 
         <button
-        @click="handleLogin('github')"
+        @click="handleLogin"
         class="w-8"
         ><img src="@/assets/login/github-white.svg" alt="login with github"></button>
 
         <button
-        @click="handleLogin('email')"
+        @click="handleLogin"
         class="w-8"
         ><img src="@/assets/login/email.png" alt="login with email"></button>
 
@@ -56,9 +56,9 @@
 const user = useSupabaseUser()
 const supabase = useSupabaseClient()
 
-const handleLogin = async (loginProvider: String) => {
+const handleLogin = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
-    provider: loginProvider,
+    provider: 'google',
   })
   
   if (error) console.log(error)
