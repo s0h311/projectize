@@ -8,7 +8,7 @@
       class="text-primarycd"
       >{{ cat.name }}</p>
       <img
-      class="w-8 h-8 rounded-xl h-max-8 w-max-8 absolute md:right-0 sm:right-24"
+      class="w-8 h-8 rounded-xl h-max-8 w-max-8 absolute md:right-0 right-24"
       :src="cat.image" :alt="`logo of ${cat.name}`">
     </NuxtLink>
   </div>
