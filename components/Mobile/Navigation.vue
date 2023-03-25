@@ -1,8 +1,8 @@
 <template>
   <div class="grid grid-cols-2 items-center mx-8 relative">
-    <button class="w-[1/2]">
+    <NuxtLink to="/" @click="sideMenuEnabled = !sideMenuEnabled" class="w-[1/2]">
       <img src="@/assets/logo.png">
-    </button>
+    </NuxtLink>
     <div class="absolute flex items-center right-0">
       <button class="w-4" @click="onSideMenuChange">
         <img v-if="!sideMenuEnabled" src="@/assets/side_menu_button.png">
@@ -13,7 +13,7 @@
   <MobileMenu v-if="sideMenuEnabled" @side-menu-change="onSideMenuChange" />
 </template>
 
-<script setup lang="ts">
+<script setup>
 const sideMenuEnabled = ref(false)
 
 const onSideMenuChange = () => {

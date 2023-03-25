@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'primarycd': '#E0FBFC',
+        'darkcd' : '#212227',
         'redcd': '#FF5035'
       },
       borderRadius: { 

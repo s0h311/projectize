@@ -4,7 +4,7 @@
     <button
     v-if="!user"
     @click="handleLogin"
-    class="h-auto w-56"
+    class="h-auto w-10"
     >
     <img src="@/assets/login/google.png">
     </button>
