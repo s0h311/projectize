@@ -1,40 +1,25 @@
 <template>
-  <div
-  class="flex items-center gap-4">
-    <button
-    v-if="!user"
-    @click="handleLogin"
-    class="h-auto w-10"
-    >
-    <img src="@/assets/login/google.png">
+  <div v-if="!user" class="w-full grid place-items-center md:place-items-start gap-4">
+    <input class="rounded-lg p-2 h-8 w-3/5 outline-none" placeholder="john@wick.com" type="text">
+    <input class="rounded-lg p-2 h-8 w-3/5 outline-none" placeholder="**********" type="password">
+    <button class="border-2 rounded-lg px-2 py-[2px] text-primarycd">
+      Login
     </button>
-    <img
-    v-if="user"
-    class="rounded-full w-16"
-    :src="`${user.user_metadata['picture']}`">
 
-    <div class="grid place-items-center">
-      <p
-      v-if="user"
-      class="text-md mb-2 text-primarycd"
-      >
-      Hey, {{ user.user_metadata['name'] }}
-      </p>
-      <p
-      v-if="user"
-      class="text-md text-primarycd"
-      >
-      @username
-      </p>  
-      <button
-      v-if="user"
-      @click="handleLogout"
-      class="text-md text-primarycd px-2 rounded border-redcd border-2"
-      >
-      logout
-      </button>
+    <div class="space-x-4">
+      <NuxtLink class="text-primarycd text-sm" to="/signup" @click="emits('sideMenuChange')">Sign Up</NuxtLink>
+      <NuxtLink class="text-primarycd text-sm" to="/resetpassword" @click="emits('sideMenuChange')">Reset Password
+      </NuxtLink>
+    </div>
+
+    <div class="space-x-6">
+      <button class="w-8" @click="handleLogin"><img src="@/assets/login/google.png" alt="login with google"></button>
+      <button @click="handleLogin" class="w-8"><img src="@/assets/login/gitlab.svg" alt="login with gitlab"></button>
+      <button @click="handleLogin" class="w-8"><img src="@/assets/login/github-white.svg"
+          alt="login with github"></button>
     </div>
   </div>
+  <button v-if="user" class="bg-primarycd w-4/6 h-11 rounded" @click="handleLogout">Logout</button>
 </template>
 
 <script setup>

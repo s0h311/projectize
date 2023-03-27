@@ -7,6 +7,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Project {
+  id          Int      @id @default(autoincrement())
+  name        String
+  creator     String
+  tags        String[]
+  description String
+  institution String
+  maxMember   Int
+  image       String
+}
+
 model Car {
   id            Int       @id @default(autoincrement())
   name          String
@@ -32,15 +43,4 @@ model Message {
   message   String
   listingId Int
   Car       Car    @relation(fields: [listingId], references: [id], onDelete: Cascade)
-}
-
-model Project {
-  id          Int      @id @default(autoincrement())
-  name        String
-  creator     String
-  tags        String[]
-  description String
-  institution String
-  maxMember   Int
-  image       String
 }

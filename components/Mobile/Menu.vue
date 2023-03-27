@@ -2,7 +2,8 @@
     <div
     class="bg-gray-600 w-screen h-auto py-4 grid place-items-center gap-4"
     >
-      <MobileLogin />
+      <Login />
+      <hr class="solid text-white w-5/6">
       <Search />
       <Categories />
     </div>

@@ -1,8 +1,9 @@
 <template>
-  <div class="grid gap-4">
+  <div class="grid gap-5">
+    <h3 class="text-primarycd font-semibold text-lg">Categories</h3>
     <NuxtLink
     :to="`/category/${cat.id}`"
-    class="md:flex md:w-5/6 relative md:mb-6 items-center grid w-screen px-24 md:px-0"
+    class="md:flex md:w-5/6 relative items-center grid w-screen px-24 md:px-0"
     v-for="cat in categories">
       <p
       class="text-primarycd"
