@@ -1,8 +1,8 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Campus Dash',
-      link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
+      title: 'Projectize your ideas',
+      link: [{ rel: 'icon', type: 'image/png', href: '/logo_p.png' }]
     }
   },
   modules: [
@@ -27,6 +27,6 @@ export default defineNuxtConfig({
         }
       }
     },
-    dir: 'assets/test-images'
+    dir: 'assets/static'
   }
 })

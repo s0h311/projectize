@@ -1,0 +1,16 @@
+node_modules
+.output
+.nuxt
+prisma
+locales
+assets
+*.md
+.eslintrc
+.prettierrc
+.gitignore
+.npmrc
+.nvmrc
+*.config.ts
+*.config.js
+*.json
+
